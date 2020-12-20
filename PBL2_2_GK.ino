@@ -142,12 +142,16 @@ void loop() {
   delayMicroseconds(11);
   digitalWrite(Trig_l,LOW);
   Duration_l = pulseIn(Echo_l,HIGH);
+  Distance_r = Duration_r/2;
+  Distance_r = Distance_r*340*100/1000000; // ultrasonic speed is 340m/s = 34000cm/s = 0.034cm/us 
+  Distance_l = Duration_l/2;
+  Distance_l = Distance_l*340*100/1000000; // ultrasonic speed is 340m/s = 34000cm/s = 0.034cm/us 
 
-  if(Duration_r <= Distance){
+  if(Distance_r <= Distance){
     zenshin();
     koushin();
   }
-  else if(Duration_l >= Distance){
+  else if(Distance_l >= Distance){
     koushin();
     zenshin();
   }
