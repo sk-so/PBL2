@@ -38,94 +38,110 @@ void setup() {
   myservo_c_2.attach(12);
   myservo_d_2.attach(13);
   
-  myservo_a_2.write(90);
-  myservo_b_2.write(90);
-  myservo_c_2.write(90);
-  myservo_d_2.write(90);
+  myservo_a_2.write(70);
+  myservo_b_2.write(110);
+  myservo_c_2.write(110);
+  myservo_d_2.write(70);
   delay(500);
 
-  myservo_a_1.write(40);
-  myservo_b_1.write(80);
-  myservo_c_1.write(140);
-  myservo_d_1.write(100);
+  myservo_a_1.write(140);
+  myservo_b_1.write(100);
+  myservo_c_1.write(40);
+  myservo_d_1.write(80);
   delay(500);
 
 }
 
 void zenshin(){
-  myservo_b_2.write(180);
-  delay(500);
-  myservo_b_1.write(170);
-  delay(500);
-  myservo_b_2.write(90);
-  delay(500);
+  myservo_b_1.write(90);//いらなくないか？
+  delay(200);
+  myservo_b_2.write(180); //180
+  delay(200);
+  myservo_b_1.write(10);
+  delay(200);
+  myservo_b_2.write(110);
+  delay(200);
   
-  myservo_a_1.write(100);
-  myservo_b_1.write(140);
+  myservo_a_1.write(80); //80
+  myservo_b_1.write(40);
+  //myservo_c_2.write(180);
+  myservo_d_1.write(140); //140
+  delay(200);
+
   myservo_c_2.write(180);
-  myservo_d_1.write(40);
-  delay(500);
+  delay(200);
+  myservo_c_1.write(100);
+  delay(200);
+  myservo_c_2.write(110);
+  delay(200);
 
-  myservo_c_1.write(80);
-  delay(500);
-  myservo_c_2.write(90);
-  delay(500);
+  myservo_a_1.write(90);
+  delay(200);
+  myservo_a_2.write(0); //0
+  delay(200);
+  myservo_a_1.write(170);
+  delay(200);
+  myservo_a_2.write(70);
+  delay(200);
 
-  myservo_a_2.write(0);
-  delay(500);
-  myservo_a_1.write(10);
-  delay(500);
-  myservo_a_2.write(90);
-  delay(500);
+  myservo_a_1.write(140);
+  myservo_b_1.write(100);
+  myservo_c_1.write(40);
+  //myservo_d_2.write(0);
+  delay(200);
 
-  myservo_a_1.write(40);
-  myservo_b_1.write(80);
-  myservo_c_1.write(140);
   myservo_d_2.write(0);
-  delay(500);
-
-  myservo_d_1.write(100);
-  delay(500);
-  myservo_d_2.write(90);
-  delay(500);
+  delay(200);
+  myservo_d_1.write(80);
+  delay(200);
+  myservo_d_2.write(70);
+  delay(200);
 }
 
 void koushin(){
-  myservo_d_2.write(0);
-  delay(500);
-  myservo_d_1.write(10);
-  delay(500);
-  myservo_d_2.write(90);
-  delay(500);
+  myservo_d_1.write(90);
+  delay(200);
+  myservo_d_2.write(0); //0
+  delay(200);
+  myservo_d_1.write(170);
+  delay(200);
+  myservo_d_2.write(70);
+  delay(200);
   
+  //myservo_a_2.write(0); 
+  myservo_b_1.write(40);
+  myservo_c_1.write(100);
+  myservo_d_1.write(140); //140
+  delay(200);
+
   myservo_a_2.write(0);
-  myservo_b_1.write(140);
-  myservo_c_1.write(80);
-  myservo_d_1.write(40);
-  delay(500);
+  delay(200);
+  myservo_a_1.write(80);
+  delay(200);
+  myservo_a_2.write(70);
+  delay(200);
 
-  myservo_a_1.write(100);
-  delay(500);
-  myservo_a_2.write(90);
-  delay(500);
+  myservo_c_1.write(90);
+  delay(200);
+  myservo_c_2.write(180); //180
+  delay(200);
+  myservo_c_1.write(10);
+  delay(200);
+  myservo_c_2.write(110);
+  delay(200);
 
-  myservo_c_2.write(180);
-  delay(500);
-  myservo_c_1.write(170);
-  delay(500);
-  myservo_c_2.write(90);
-  delay(500);
+  myservo_a_1.write(140);
+  //myservo_b_2.write(180);
+  myservo_c_1.write(40);
+  myservo_d_1.write(80);
+  delay(200);
 
-  myservo_a_1.write(40);
   myservo_b_2.write(180);
-  myservo_c_1.write(140);
-  myservo_d_1.write(100);
-  delay(500);
-
-  myservo_b_1.write(80);
-  delay(500);
-  myservo_b_2.write(90);
-  delay(500);
+  delay(200);
+  myservo_b_1.write(100);
+  delay(200);
+  myservo_b_2.write(110);
+  delay(200);
 }
 
 void loop() {
