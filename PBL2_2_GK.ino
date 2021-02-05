@@ -1,4 +1,3 @@
-//進むときは三足
 #include <Servo.h>
 
 Servo myservo_a_1; //左前脚の第一関節
@@ -38,94 +37,36 @@ void setup() {
   myservo_c_2.attach(12);
   myservo_d_2.attach(13);
   
-  myservo_a_2.write(90);
-  myservo_b_2.write(90);
-  myservo_c_2.write(90);
-  myservo_d_2.write(90);
+  myservo_a_2.write(60);
+  myservo_b_2.write(125);//110
+  myservo_c_2.write(120);
+  myservo_d_2.write(65);//70
   delay(500);
 
-  myservo_a_1.write(40);
-  myservo_b_1.write(80);
-  myservo_c_1.write(140);
-  myservo_d_1.write(100);
+  myservo_a_1.write(80);
+  myservo_b_1.write(90);
+  myservo_c_1.write(100);
+  myservo_d_1.write(90);
   delay(500);
 
 }
 
-void zenshin(){
-  myservo_b_2.write(180);
-  delay(500);
-  myservo_b_1.write(170);
-  delay(500);
-  myservo_b_2.write(90);
-  delay(500);
-  
-  myservo_a_1.write(100);
-  myservo_b_1.write(140);
-  myservo_c_2.write(180);
-  myservo_d_1.write(40);
-  delay(500);
-
-  myservo_c_1.write(80);
-  delay(500);
-  myservo_c_2.write(90);
-  delay(500);
-
-  myservo_a_2.write(0);
-  delay(500);
-  myservo_a_1.write(10);
-  delay(500);
-  myservo_a_2.write(90);
-  delay(500);
-
-  myservo_a_1.write(40);
-  myservo_b_1.write(80);
-  myservo_c_1.write(140);
-  myservo_d_2.write(0);
-  delay(500);
-
-  myservo_d_1.write(100);
-  delay(500);
-  myservo_d_2.write(90);
-  delay(500);
+void L(){
+  myservo_a_2.write(50); //0
+  delay(100);
+  myservo_a_1.write(180);
+  delay(200);
+  myservo_a_2.write(60);
+  delay(200);
 }
 
-void koushin(){
-  myservo_d_2.write(0);
-  delay(500);
-  myservo_d_1.write(10);
-  delay(500);
-  myservo_d_2.write(90);
-  delay(500);
-  
-  myservo_a_2.write(0);
-  myservo_b_1.write(140);
-  myservo_c_1.write(80);
-  myservo_d_1.write(40);
-  delay(500);
-
-  myservo_a_1.write(100);
-  delay(500);
-  myservo_a_2.write(90);
-  delay(500);
-
-  myservo_c_2.write(180);
-  delay(500);
-  myservo_c_1.write(170);
-  delay(500);
-  myservo_c_2.write(90);
-  delay(500);
-
-  myservo_a_1.write(40);
-  myservo_b_2.write(180);
-  myservo_c_1.write(140);
-  myservo_d_1.write(100);
-  delay(500);
-
-  myservo_b_1.write(80);
-  delay(500);
-  myservo_b_2.write(90);
-  delay(500);
+void R(){
+  myservo_c_2.write(130); //180
+  delay(100);
+  myservo_c_1.write(0);
+  delay(200);
+  myservo_c_2.write(120);
+  delay(200);
 }
 
 void loop() {
@@ -147,12 +88,16 @@ void loop() {
   Distance_l = Duration_l/2;
   Distance_l = Distance_l*340*100/1000000; // ultrasonic speed is 340m/s = 34000cm/s = 0.034cm/us 
 
-  if(Distance_r <= Distance){
-    zenshin();
-    koushin();
+  if(Distance_r > 0 && Distance_r <= Distance){
+    Serial.print(Distance_r);
+    Serial.println(" cm 右");
+    R();
+    delay(10000);
   }
-  else if(Distance_l >= Distance){
-    koushin();
-    zenshin();
+  else if(Distance_l > 0 && Distance_l <= Distance){
+    Serial.print(Distance_l);
+    Serial.println(" cm 左");
+    L();
+    delay(10000);
   }
 }
